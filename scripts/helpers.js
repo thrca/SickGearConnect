@@ -188,7 +188,7 @@ function genricRequestError(data, params, succes_callback, error_callback, timeo
     log("request error", "REQ", ERROR);
     console.log(data);
     log("trying to load old data", "REQ", INFO);
-    if (cache.getItem("json_" + params) && params.cmd != "sb.ping" && timeout) {
+    if (cache.getItem("json_" + params) && params.cmd != "sr.ping" && timeout) {
         data = cache.getItem("json_" + params);
         var msg = "No connection! Using old data.";
         log(msg, WARNING);

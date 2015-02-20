@@ -105,14 +105,14 @@ function refreshHistory() {
 }
 function refreshMSG() {
     var params = new Params();
-    params.cmd = "sb.getmessages";
+    params.cmd = "sr.getmessages";
     genericRequest(params, msgCallback, null, 0, null); // timeout disabeld
 
 }
 
 function refreshFuture() {
     // TODO: implement
-    log("refresh futur not FULLY implmented", "BAK", WARNING);
+    log("refresh future not FULLY implmented", "BAK", WARNING);
 
     var params = new Params();
     params.cmd = "future";
