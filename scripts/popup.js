@@ -59,7 +59,7 @@ function refreshContent() {
 function listenForNotificationsFast(lastFor) {
     if (!lastFor)
         lastFor = 60000; // default to 1 min
-    log("Will pull notifications from SickBeard faster for " + lastFor + " ms.", "POP", DEBUG);
+    log("Will pull notifications from SickRage faster for " + lastFor + " ms.", "POP", DEBUG);
     chrome.extension.getBackgroundPage().setMSGTimer(1000); // pull msgs every second
     window.setTimeout(function() {
         chrome.extension.getBackgroundPage().setMSGTimer(2000);// pull msgs every 2 seconds

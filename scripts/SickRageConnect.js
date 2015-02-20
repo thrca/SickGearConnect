@@ -232,6 +232,6 @@ function initGui(){
 }
 function editShow(){}
 
-var popupId = 'sickbeardc';
+var popupId = 'SickRagec';
 initGui();
 

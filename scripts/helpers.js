@@ -110,7 +110,7 @@ function getApiUrl(profileName) {
 }
 
 /**
- * issue a request to sickbeard api keeps log of requests
+ * issue a request to SickRage api keeps log of requests
  * 
  * @param params
  * @param succes_callback
@@ -131,7 +131,7 @@ function genericRequest(params, succes_callback, error_callback, timeout, timeou
         }
 
     var apiUrl = getApiUrl(profileName);
-    $.ajax( { type : "POST", url : apiUrl, data : params, dataType : 'json', success : function(data) {
+    $.ajax( { type : "GET", url : apiUrl, data : params, dataType : 'json', success : function(data) {
         age.setItem("json_" + params, $.now()); // time of last successful call
         cache.setItem("json_" + params, data); // json string of last response
         checkForError(data, params, succes_callback, error_callback);

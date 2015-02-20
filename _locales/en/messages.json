@@ -1,9 +1,9 @@
 {
     "ext_name":{
-        "message": "SickBeardConnect"
+        "message": "SickRageConnect"
     },
     "sb_name": {
-        "message": "SickBeard" 
+        "message": "SickRage" 
     },
 
     "default_profile_name": {
@@ -42,8 +42,8 @@
         "message": "seconds"
     },
     
-    "options_tab_sickbeard": {
-        "message": "SickBeard"
+    "options_tab_SickRage": {
+        "message": "SickRage"
     },
     "options_group_connection": {
         "message": "Connection"
@@ -69,19 +69,19 @@
     
     
     "options_url_label": {
-        "message": "SickBeard Url"
+        "message": "SickRage Url"
     },
     "options_url_example": {
         "message": "http://your-dyn-dns:8080"
     },
     "options_apiKey_label": {
-        "message": "SickBeard ApiKey"
+        "message": "SickRage ApiKey"
     },
     "options_apiKey_example": {
         "message": "32 chars"
     },
     "options_apiKey_description": {
-        "message": "Get the ApiKey from the SickBeard config page"
+        "message": "Get the ApiKey from the SickRage config page"
     },
     "options_priority_label": {
       "message": "Priority"
@@ -99,10 +99,10 @@
         "message": "Password"
     },
     "options_username_example": {
-        "message": "SickBeard Username"
+        "message": "SickRage Username"
     },
     "options_password_example": {
-        "message": "SickBeard Password"
+        "message": "SickRage Password"
     },
     "options_usernamePassword_description": {
         "message": "You only need to provide the username and password if you want to display images and are below API v0.2"

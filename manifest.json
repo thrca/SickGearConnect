@@ -1,9 +1,9 @@
 {
     "name": "__MSG_ext_name__",
     "manifest_version": 2,
-    "version": "0.1.22",
+    "version": "0.1.23",
     "permissions": [ "http://*/*", "https://*/*", "tabs", "notifications" ],
-    "description": "SickBeard extension for Google Chrome.",
+    "description": "SickRage extension for Google Chrome.",
     "background": {
         "page": "background.html"
      },
@@ -12,12 +12,12 @@
     "browser_action": {
         "default_icon": "images/icon19.png",
         "default_popup": "popup.html",
-        "default_title": "Sick Beard Connect"
+        "default_title": "SickRage Connect"
     },
     "content_scripts": [
         {
             "matches": ["http://trakt.tv/show/*","http://*.trakt.tv/show/*","http://thetvdb.com/*series*","http://*.thetvdb.com/*series*"],
-            "js": ["scripts/SickBeardConnect.js"]
+            "js": ["scripts/SickRageConnect.js"]
         }
     ],
     "icons": {

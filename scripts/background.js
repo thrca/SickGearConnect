@@ -58,10 +58,10 @@ function setMSGTimer(rate) {
     if (!rate)
         rate = settings.getItem("config_notification_default_rate") * 1000;
     if (rate > 0) {
-        log("Will pull notifications from SickBeard every " + settings.getItem("config_notification_default_rate") + " s.", "BAK", INFO);
+        log("Will pull notifications from SickRage every " + settings.getItem("config_notification_default_rate") + " s.", "BAK", INFO);
         msgTimer = setInterval(refreshMSG, rate);
     } else {
-        log("Will NOT pull notifications from SickBeard automatically (refresh disabled in options).", "BAK", INFO);
+        log("Will NOT pull notifications from SickRage automatically (refresh disabled in options).", "BAK", INFO);
     }
 }
 
@@ -71,11 +71,11 @@ function setFutureTimer(rate) {
     if (!rate)
         rate = settings.getItem("config_refresh_rate") * 1000 * 60;
     if (rate > 0) {
-        log("Will pull future / badge info from SickBeard every " + (rate / 1000 )/ 60 + " min.", "BAK", INFO);
+        log("Will pull future / badge info from SickRage every " + (rate / 1000 )/ 60 + " min.", "BAK", INFO);
         refreshFuture();
         futureTimer = setInterval(refreshFuture, rate);
     } else {
-        log("Will NOT pull future / badge info from SickBeard automatically (refresh disabled in options).", "BAK", INFO);
+        log("Will NOT pull future / badge info from SickRage automatically (refresh disabled in options).", "BAK", INFO);
     }
 }
 
