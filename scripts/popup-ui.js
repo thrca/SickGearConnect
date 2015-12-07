@@ -506,6 +506,9 @@ function historyBuild(response, params) {
             if (value.quality.indexOf(" HD") != -1) {
                 var HD = "HD"
             }
+            else if (value.quality.indexOf(" WEB-DL") != -1) {
+                var HD = "HD"
+            }
             else {
                 var HD = ""
             }
