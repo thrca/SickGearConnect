@@ -105,7 +105,7 @@ function refreshHistory() {
 }
 function refreshMSG() {
     var params = new Params();
-    params.cmd = "sb.getmessages";
+    params.cmd = "sr.getmessages";
     genericRequest(params, msgCallback, null, 0, null); // timeout disabeld
 
 }
