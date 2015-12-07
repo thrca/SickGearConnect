@@ -85,8 +85,16 @@ function checkDomain(domain){
 function getCurrentTVDBID(){
     var tvdbid = 0;
 
-    if(checkDomain('trakt'))
-        tvdbid = document.getElementById("meta-tvdb-id").value;
+    if(checkDomain('trakt')) {
+        var n1 = document.body.innerHTML.indexOf("http://thetvdb.com/?id=");
+        if (n1 != -1) {
+            n1 = n1 + 23;
+            var n2 = document.body.innerHTML.indexOf("&amp;tab=series", n1);
+            if (n2 != -1) {
+                tvdbid = document.body.innerHTML.substr(n1,n2-n1);
+            }
+        }
+    }
     else if(checkDomain('thetvdb'))
         tvdbid = get_GET_param('id');
     
@@ -97,7 +105,7 @@ function getCurrentName(){
     var name = "";
 
     if(checkDomain('trakt'))
-        name = document.getElementsByTagName("h2")[0].innerHTML;
+        name = document.getElementsByTagName("h1")[0].innerHTML.replace('<span class="year">','(').replace('</span>',')');
     else if(checkDomain('thetvdb'))
         name = document.getElementsByTagName("h1")[0].innerHTML;
     
@@ -208,7 +216,7 @@ function initGui(){
     fileref.setAttribute("rel", "stylesheet");
     fileref.setAttribute("type", "text/css");
     fileref.setAttribute("href", chrome.extension.getURL('css/sbconnect_content.css'));
-    document.getElementsByTagName("head")[0].appendChild(fileref)
+    document.getElementsByTagName("head")[0].appendChild(fileref);
     popup.appendChild(addButton);
     document.body.appendChild(popup);
 
