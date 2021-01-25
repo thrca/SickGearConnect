@@ -13,7 +13,7 @@ Automatic Video Library Manager for TV Shows. It watches for new episodes of you
  - Optionally display banner or poster art
  - See if you have a show while browsing trakt.tv or thetvdb.com
  - Quickly add a show from trakt.tv or thetvdb.com
- - Receive notification pop-ups from the SickRage system
+ - Receive notification pop-ups from the SickGear system
 
 #### Screenshots
 
