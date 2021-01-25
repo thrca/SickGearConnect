@@ -1,9 +1,9 @@
 {
     "name": "__MSG_ext_name__",
     "manifest_version": 2,
-    "version": "0.1.23.1",
+    "version": "0.1.24.1",
     "permissions": [ "http://*/*", "https://*/*", "tabs", "notifications" ],
-    "description": "SickRage extension for Google Chrome.",
+    "description": "SickGear extension for Google Chrome.",
     "background": {
         "page": "background.html"
      },
@@ -12,12 +12,12 @@
     "browser_action": {
         "default_icon": "images/icon19.png",
         "default_popup": "popup.html",
-        "default_title": "SickRage Connect"
+        "default_title": "SickGear Connect"
     },
     "content_scripts": [
         {
             "matches": ["http://trakt.tv/shows/*","http://*.trakt.tv/shows/*","http://thetvdb.com/*series*","http://*.thetvdb.com/*series*"],
-            "js": ["third_party/jquery/js/jquery-1.6.2.min.js","scripts/SickRageConnect.js"],
+            "js": ["third_party/jquery/js/jquery-1.6.2.min.js","scripts/SickGearConnect.js"],
             "run_at": "document_end"
         }
     ],

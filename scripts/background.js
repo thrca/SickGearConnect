@@ -33,7 +33,7 @@ chrome.extension.onRequest.addListener(
               succescallback = function(data,param){
                   if(data['data'])
                       data = data['data'];
-                  
+
                   var showList = {};
                   $.each(data, function(name, show) {
                       showList[show.tvdbid] = name;
@@ -58,10 +58,10 @@ function setMSGTimer(rate) {
     if (!rate)
         rate = settings.getItem("config_notification_default_rate") * 1000;
     if (rate > 0) {
-        log("Will pull notifications from SickRage every " + settings.getItem("config_notification_default_rate") + " s.", "BAK", INFO);
+        log("Will pull notifications from SickGear every " + settings.getItem("config_notification_default_rate") + " s.", "BAK", INFO);
         msgTimer = setInterval(refreshMSG, rate);
     } else {
-        log("Will NOT pull notifications from SickRage automatically (refresh disabled in options).", "BAK", INFO);
+        log("Will NOT pull notifications from SickGear automatically (refresh disabled in options).", "BAK", INFO);
     }
 }
 
@@ -71,11 +71,11 @@ function setFutureTimer(rate) {
     if (!rate)
         rate = settings.getItem("config_refresh_rate") * 1000 * 60;
     if (rate > 0) {
-        log("Will pull future / badge info from SickRage every " + (rate / 1000 )/ 60 + " min.", "BAK", INFO);
+        log("Will pull future / badge info from SickGear every " + (rate / 1000 )/ 60 + " min.", "BAK", INFO);
         refreshFuture();
         futureTimer = setInterval(refreshFuture, rate);
     } else {
-        log("Will NOT pull future / badge info from SickRage automatically (refresh disabled in options).", "BAK", INFO);
+        log("Will NOT pull future / badge info from SickGear automatically (refresh disabled in options).", "BAK", INFO);
     }
 }
 
@@ -99,13 +99,13 @@ function refreshHistory() {
     log("refresh history not FULLY implmented", "BAK", WARNING);
 
     var params = new Params();
-    params.cmd = "history";
+    params.cmd = "sg.history";
     genericRequest(params, null, null, 0, null); // timeout disabeld
 
 }
 function refreshMSG() {
     var params = new Params();
-    params.cmd = "sb.getmessages";
+    params.cmd = "sg.getmessages";
     genericRequest(params, msgCallback, null, 0, null); // timeout disabeld
 
 }
@@ -115,7 +115,7 @@ function refreshFuture() {
     log("refresh future not FULLY implmented", "BAK", WARNING);
 
     var params = new Params();
-    params.cmd = "future";
+    params.cmd = "sg.future";
     genericRequest(params, setBadge, null, 0, null); // timeout disabeld
 
 }
@@ -216,12 +216,12 @@ function checkProfileTestDone(){
     var allProfiles = profiles.getAll();
     var toCompare = [];
     var testsNotDone = false;
-    
+
     $.each(allProfiles, function(name, values) {
         if(values.profile_priority){
             if(!connectionStatusProfile.hasOwnProperty(name)){
                 testsNotDone = true;
-                return false;   
+                return false;
             }
             values.name = name;
             values.connectionStatus = connectionStatusProfile[name];
@@ -230,7 +230,7 @@ function checkProfileTestDone(){
     });
     if(testsNotDone)
         return false;
-    
+
     var sorted = toCompare.sort(profileCompare);
     console.log("sorted list",sorted)
     $.each(sorted, function(index, curP) {
@@ -264,14 +264,14 @@ function reloadBackgroundPage() {
 
 function switchProfile(profileName){
     profile = profiles.getProfile(profileName);
-    
+
     settings.setItem('profile_name', profile.name);
-    
+
     settings.setItem('sb_url', profile.values.sb_url);
     settings.setItem('sb_api_key', profile.values.sb_api_key);
     settings.setItem('sb_username', profile.values.sb_username);
     settings.setItem('sb_password', profile.values.sb_password);
-    
+
     cache.clear();
     age.clear();
 }
@@ -279,7 +279,7 @@ function switchProfile(profileName){
 function migration(){
 
     console.log("migration: init check");
-    
+
     var migrationLvl = settings.getItem('migration');
     if(typeof migrationLvl === undefined){
         settings.setItem('migration', 0);

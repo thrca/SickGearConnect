@@ -1,9 +1,9 @@
 {
     "ext_name":{
-        "message": "SickRageConnect"
+        "message": "SickGearConnect"
     },
     "sb_name": {
-        "message": "SickRage" 
+        "message": "SickGear" 
     },
 
     "default_profile_name": {
@@ -42,8 +42,8 @@
         "message": "seconds"
     },
     
-    "options_tab_SickRage": {
-        "message": "SickRage"
+    "options_tab_SickGear": {
+        "message": "SickGear"
     },
     "options_group_connection": {
         "message": "Connection"
@@ -69,19 +69,19 @@
     
     
     "options_url_label": {
-        "message": "SickRage Url"
+        "message": "SickGear Url"
     },
     "options_url_example": {
         "message": "http://your-dyn-dns:8080"
     },
     "options_apiKey_label": {
-        "message": "SickRage ApiKey"
+        "message": "SickGear ApiKey"
     },
     "options_apiKey_example": {
         "message": "32 chars"
     },
     "options_apiKey_description": {
-        "message": "Get the ApiKey from the SickRage config page"
+        "message": "Get the ApiKey from the SickGear config page"
     },
     "options_priority_label": {
       "message": "Priority"
@@ -99,10 +99,10 @@
         "message": "Password"
     },
     "options_username_example": {
-        "message": "SickRage Username"
+        "message": "SickGear Username"
     },
     "options_password_example": {
-        "message": "SickRage Password"
+        "message": "SickGear Password"
     },
     "options_usernamePassword_description": {
         "message": "You only need to provide the username and password if you want to display images and are below API v0.2"
@@ -126,7 +126,7 @@
         "message": "Display the show banner"
     },
     "options_imageFuture_label": {
-        "message": "Images in CommingEp Tab"
+        "message": "Images in ComingEp Tab"
     },
     "options_iconBadge_label": {
         "message": "Icon badge displays"

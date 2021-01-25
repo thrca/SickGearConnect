@@ -3,12 +3,12 @@ function initGui() {
     $("#open_sb").click(function(){openSBPage();});
     $("#extension_settings").click(function(){openSettings();});
     $("#refresh").click(function(){refreshContent();});
-    
+
     // see popup-ui.js
     _initGui();
 }
 /**
- * 
+ *
  */
 function initContent() {
 
@@ -17,10 +17,10 @@ function initContent() {
 
     //set flag to not auto change the profile while pop is open
     settings.setItem('in_popup', true);
-    
+
     // set current profile
     setupProfileSwitcher();
-    
+
     var params = new Params();
     params.cmd = "shows";
     params.sort = "name";
@@ -33,7 +33,7 @@ function initContent() {
     var params = new Params();
     params.cmd = "history";
     genericRequest(params, historyBuild, genericResponseError, 60000, historyTimeout); // timeout 1 min
-    
+
     var addshowset = settings.getItem('config_addshow');
     if((addshowset == 'popup' || addshowset == 'both'))
         pageTVDBID(injectAddNewShow);
@@ -50,7 +50,7 @@ function refreshContent() {
     $("#contend").tabs('select', 0); // select first tab
     $('#shows-arc').accordion('activate', 0); // select first arc in shows
     $('#future-arc').accordion('activate', 0); // select first arc in future
-    
+
     $("#loadContainer").show();
     initContent();
 
@@ -59,7 +59,7 @@ function refreshContent() {
 function listenForNotificationsFast(lastFor) {
     if (!lastFor)
         lastFor = 60000; // default to 1 min
-    log("Will pull notifications from SickRage faster for " + lastFor + " ms.", "POP", DEBUG);
+    log("Will pull notifications from SickGear faster for " + lastFor + " ms.", "POP", DEBUG);
     chrome.extension.getBackgroundPage().setMSGTimer(1000); // pull msgs every second
     window.setTimeout(function() {
         chrome.extension.getBackgroundPage().setMSGTimer(2000);// pull msgs every 2 seconds
@@ -128,13 +128,13 @@ function activateSection(){
             $('#future-arc').accordion('activate', cache.getItem('last_future_arc'));
         }
     }
-    
+
 }
 
 
 /**
  * open the show panel with the requested show info for the tvdbid
- * 
+ *
  * @param tvdbid
  */
 function openShow(tvdbid) {

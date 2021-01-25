@@ -11,8 +11,8 @@ function getDefaultProfiles(){
     return default_profile;
 }
 function getDefaultSettings(){
-    
-    var defaultSettings = { 
+
+    var defaultSettings = {
             "profile_name": getDefaultProfileName(),
             "profiles": getDefaultProfiles(),
             "sb_url" : "",
@@ -110,8 +110,8 @@ function getApiUrl(profileName) {
 }
 
 /**
- * issue a request to SickRage api keeps log of requests
- * 
+ * issue a request to SickGear api keeps log of requests
+ *
  * @param params
  * @param succes_callback
  * @param error_callback
@@ -119,7 +119,7 @@ function getApiUrl(profileName) {
 function genericRequest(params, succes_callback, error_callback, timeout, timeout_callback, profileName) {
     if(typeof profileName === "undefined")
         profileName = settings.getItem('profile_name');
-    
+
     log("New Req for("+profileName+"): " + params, "REG", DEBUG);
     if (cache.getItem("html_" + params) || cache.getItem("json_" + params))
         if ($.now() - age.getItem("json_" + params) < timeout) {
@@ -142,7 +142,7 @@ function genericRequest(params, succes_callback, error_callback, timeout, timeou
 
 /**
  * checks id data has the attr "error" if not noErrorCallback is called with data and paramString as arguments
- * 
+ *
  * @param response
  * @param paramString
  * @param succes_callback
@@ -156,7 +156,7 @@ function checkForError(response, params, succes_callback, error_callback) {
         RESULT_DENIED:"denied",
         }
 */
-    
+
     if (response.result != "success") {
         log("Reg recived for BUT not successful : " + params, "REG", DEBUG);
         if (response.result == "denied") {
@@ -180,7 +180,7 @@ function checkForError(response, params, succes_callback, error_callback) {
 }
 /**
  * log the request error
- * 
+ *
  * @param data
  */
 function genricRequestError(data, params, succes_callback, error_callback, timeout) {
@@ -200,7 +200,7 @@ function genricRequestError(data, params, succes_callback, error_callback, timeo
     } else {
         if(error_callback)
             error_callback();
-        
+
         var msg = "No connection and NO old data!";
         log(msg, ERROR);
         try {
@@ -213,7 +213,7 @@ function genricRequestError(data, params, succes_callback, error_callback, timeo
 
 /**
  * log the error response
- * 
+ *
  * @param data
  * @param params
  */
@@ -231,7 +231,7 @@ function genericResponseError(response, params) {
 }
 
 /**
- * 
+ *
  * @returns {Params}
  */
 function Params() {
@@ -240,7 +240,7 @@ function Params() {
 
 /**
  * create a simple string from the param dict/obj the string looks kinda like a get request
- * 
+ *
  * @param params
  * @returns {String}
  */
@@ -310,7 +310,7 @@ logLvlString["WARNING"] = WARNING;
 logLvlString["ERROR"] = ERROR;
 /**
  * generic logger function
- * 
+ *
  * @param msg
  *            the msg to display
  * @param sections

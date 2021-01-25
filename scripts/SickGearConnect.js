@@ -46,7 +46,7 @@ function get_GET_params() {
     }
     return(GET);
  }
-  
+
  function get_GET_param(key) {
     var get_params = get_GET_params();
     if(get_params[key])
@@ -97,9 +97,9 @@ function getCurrentTVDBID(){
     }
     else if(checkDomain('thetvdb'))
         tvdbid = get_GET_param('id');
-    
+
     return tvdbid;
-    
+
 }
 function getCurrentName(){
     var name = "";
@@ -108,9 +108,9 @@ function getCurrentName(){
         name = document.getElementsByTagName("h1")[0].innerHTML.replace('<span class="year">','(').replace('</span>',')');
     else if(checkDomain('thetvdb'))
         name = document.getElementsByTagName("h1")[0].innerHTML;
-    
+
     return name;
-    
+
 }
 
 var haveShow = false;
@@ -268,7 +268,7 @@ function DOMModificationHandler(){
     },1000);
 }
 
-var popupId = 'SickRagec';
+var popupId = 'SickGearc';
 initGui();
 //after document-load
 $('body').bind('DOMSubtreeModified.event1',DOMModificationHandler);
