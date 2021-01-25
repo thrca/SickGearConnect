@@ -1,9 +1,9 @@
-SickRage Connect 
+SickGear Connect 
 =====
 Automatic Video Library Manager for TV Shows. It watches for new episodes of your favorite shows, and when they are posted it does its magic.
 
 #### Features
- - Connect to SickRage and display:
+ - Connect to SickGear and display:
     - Shows in your Library
     - Missed Shows
     - Shows on Today
@@ -18,6 +18,3 @@ Automatic Video Library Manager for TV Shows. It watches for new episodes of you
 #### Screenshots
 
 
-
-#### [![Feature Requests](https://cloud.githubusercontent.com/assets/390379/10127973/045b3a96-6560-11e5-9b20-31a2032956b2.png)](https://github.com/SickRage/SickRageConnect/issues)
-##### [SickRage Connect Issue Tracker](https://github.com/SickRageConnect/issues)
